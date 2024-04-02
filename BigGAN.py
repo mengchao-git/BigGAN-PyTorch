@@ -13,9 +13,9 @@ import layers
 from sync_batchnorm import SynchronizedBatchNorm2d as SyncBatchNorm2d
 
 
-# Architectures for G
-# Attention is passed in in the format '32_64' to mean applying an attention
-# block at both resolution 32x32 and 64x64. Just '64' will apply at 64x64.
+# Architectures for G  生成器架构
+# Attention is passed in in the format '32_64' to mean applying an attention 注意力以 "32_64 "格式传递，表示应用注意力
+# block at both resolution 32x32 and 64x64. Just '64' will apply at 64x64. 块的分辨率均为 32x32 和 64x64。仅 "64 "将适用于 64x64 分辨率。
 def G_arch(ch=64, attention='64', ksize='333333', dilation='111111'):
   arch = {}
   arch[512] = {'in_channels' :  [ch * item for item in [16, 16, 8, 8, 4, 2, 1]],

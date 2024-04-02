@@ -12,7 +12,7 @@ from torch.nn import Parameter as P
 from sync_batchnorm import SynchronizedBatchNorm2d as SyncBN2d
 
 
-# Projection of x onto y
+# Projection of x onto y torch.mm表示矩阵相乘
 def proj(x, y):
   return torch.mm(y, x.t()) * y / torch.mm(y, y.t())
 
